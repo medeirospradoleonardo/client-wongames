@@ -11,13 +11,13 @@ const wrapperModifiers = {
     position: relative;
     margin-bottom: ${theme.spacings.medium};
 
-    &::after{
-        position: absolute;
-        left: 0;
-        bottom: -1rem;
-        content: '';
-        width: 5rem;
-        border: 0.4rem solid ${theme.colors.primary}
+    &::after {
+      position: absolute;
+      left: 0;
+      bottom: -1rem;
+      content: '';
+      width: 5rem;
+      border: 0.4rem solid ${theme.colors.primary};
     }
   `
 }
