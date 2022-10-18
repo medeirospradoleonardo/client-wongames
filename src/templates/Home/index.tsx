@@ -4,7 +4,7 @@ import Heading from 'components/Heading'
 import Menu from 'components/Menu'
 import * as S from './styles'
 
-const Home = () => (
+const Home = ({ heading }: any) => (
   <section>
     <Container>
       <Menu />
