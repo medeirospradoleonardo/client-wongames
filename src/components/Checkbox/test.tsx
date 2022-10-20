@@ -7,7 +7,7 @@ import Checkbox from '.'
 
 describe('<Checkbox />', () => {
   it('should render with label', () => {
-    renderWithTheme(<Checkbox label="checkbox label" labelFor="check" />)
+    const { container } = renderWithTheme(<Checkbox label="checkbox label" labelFor="check" />)
 
 
     // input a partir do papel / role
@@ -18,6 +18,8 @@ describe('<Checkbox />', () => {
 
     // label a partir do texto dela
     expect(screen.getByText(/checkbox label/i)).toHaveAttribute('for', 'check')
+
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render without label', () => {
