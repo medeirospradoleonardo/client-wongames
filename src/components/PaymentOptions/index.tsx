@@ -28,7 +28,7 @@ const PaymentOptions = ({ cards, handlePayment }: PaymentOptionsProps) => (
             <img src={card.img} alt={card.flag} />
             {card.number}
           </S.CardInfo>
-          <Radio name='credit-card' id={card.number} value={card.number} onCheck={() => { }} />
+          <Radio name='credit-card' id={card.number} aria-label={card.number} value={card.number} onCheck={() => { }} />
         </S.CardItem>
       ))}
 
