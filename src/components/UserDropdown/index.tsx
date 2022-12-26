@@ -40,7 +40,7 @@ const UserDropdown = ({ username }: UserDropdownProps) => (
       <Link href='/logout' passHref>
         <S.Link>
           <ExitToApp />
-          <span>Logout</span>
+          <span>Sign out</span>
         </S.Link>
       </Link>
     </S.Nav>
