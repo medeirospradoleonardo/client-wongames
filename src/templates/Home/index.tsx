@@ -10,7 +10,6 @@ import ShowCase from 'components/ShowCase'
 import Base from 'templates/Base'
 
 export type HomeTemplateProps = {
-  data: any
   banners: BannerProps[]
   newGames: GameCardProps[]
   mostPopularHighlight: HighlightProps
