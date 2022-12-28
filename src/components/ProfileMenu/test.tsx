@@ -20,7 +20,7 @@ describe('<ProfileMenu />', () => {
   })
 
   it('should render the menu with an active link defined', () => {
-    renderWithTheme(<ProfileMenu activeLink='/profile/cards' />)
+    renderWithTheme(<ProfileMenu activeLink="/profile/cards" />)
 
     expect(screen.getByRole('link', { name: /my cards/i })).toHaveStyle({
       background: theme.colors.primary,

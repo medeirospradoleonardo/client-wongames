@@ -9,7 +9,9 @@ describe('<CardsList />', () => {
   it('should render the cards list', () => {
     renderWithTheme(<CardsList cards={cardsMock} />)
 
-    expect(screen.getByRole('heading', { name: /my cards/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /my cards/i })
+    ).toBeInTheDocument()
 
     expect(screen.getByRole('img', { name: /visa/i })).toHaveAttribute(
       'src',

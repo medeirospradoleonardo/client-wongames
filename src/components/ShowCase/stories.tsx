@@ -29,14 +29,18 @@ Default.args = {
   games: gamesMock
 }
 
-export const WithoutHighlight: Story<ShowCaseProps> = (args) => <ShowCase {...args} />
+export const WithoutHighlight: Story<ShowCaseProps> = (args) => (
+  <ShowCase {...args} />
+)
 
 WithoutHighlight.args = {
   title: 'Most Popular',
   games: gamesMock
 }
 
-export const WithoutGames: Story<ShowCaseProps> = (args) => <ShowCase {...args} />
+export const WithoutGames: Story<ShowCaseProps> = (args) => (
+  <ShowCase {...args} />
+)
 
 WithoutGames.args = {
   title: 'Most Popular',

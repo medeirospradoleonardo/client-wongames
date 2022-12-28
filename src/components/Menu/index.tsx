@@ -17,14 +17,13 @@ export type MenuProps = {
 }
 
 const Menu = ({ username }: MenuProps) => {
-
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <S.Wrapper isOpen={isOpen}>
-      <MediaMatch lessThan='medium'>
+      <MediaMatch lessThan="medium">
         <S.IconWrapper onClick={() => setIsOpen(true)}>
-          <MenuIcon aria-label='Open Menu' />
+          <MenuIcon aria-label="Open Menu" />
         </S.IconWrapper>
       </MediaMatch>
       <S.LogoWrapper>
@@ -35,7 +34,7 @@ const Menu = ({ username }: MenuProps) => {
         </Link>
       </S.LogoWrapper>
 
-      <MediaMatch greaterThan='medium'>
+      <MediaMatch greaterThan="medium">
         <S.MenuNav>
           <Link href="/" passHref>
             <S.MenuLink href="#">Home</S.MenuLink>
@@ -48,24 +47,24 @@ const Menu = ({ username }: MenuProps) => {
 
       <S.MenuGroup>
         <S.IconWrapper>
-          <SearchIcon aria-label='search' />
+          <SearchIcon aria-label="search" />
         </S.IconWrapper>
         <S.IconWrapper>
-          <MediaMatch greaterThan='medium'>
+          <MediaMatch greaterThan="medium">
             <CartDropdown />
           </MediaMatch>
-          <MediaMatch lessThan='medium'>
-            <Link href='/cart'>
+          <MediaMatch lessThan="medium">
+            <Link href="/cart">
               <a>
                 <CartIcon />
               </a>
             </Link>
           </MediaMatch>
         </S.IconWrapper>
-        <MediaMatch greaterThan='medium'>
+        <MediaMatch greaterThan="medium">
           {!username ? (
-            <Link href='/sign-in' passHref>
-              <Button as='a'>Sign in</Button>
+            <Link href="/sign-in" passHref>
+              <Button as="a">Sign in</Button>
             </Link>
           ) : (
             <UserDropdown username={username} />
@@ -74,7 +73,7 @@ const Menu = ({ username }: MenuProps) => {
       </S.MenuGroup>
 
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
-        <CloseIcon aria-label='Close Menu' onClick={() => setIsOpen(false)} />
+        <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
         <S.MenuNav>
           <Link href="/" passHref>
             <S.MenuLink href="#">Home</S.MenuLink>
@@ -96,16 +95,14 @@ const Menu = ({ username }: MenuProps) => {
         </S.MenuNav>
         {!username && (
           <S.RegisterBox>
-            <Link href='/sign-in' passHref>
-              <Button fullWidth size='large' as='a'>
+            <Link href="/sign-in" passHref>
+              <Button fullWidth size="large" as="a">
                 Sign in
               </Button>
             </Link>
             <span>or</span>
-            <Link href='/sign-up' passHref>
-              <S.CreateAccount title='Sign Up'>
-                Sign Up
-              </S.CreateAccount>
+            <Link href="/sign-up" passHref>
+              <S.CreateAccount title="Sign Up">Sign Up</S.CreateAccount>
             </Link>
           </S.RegisterBox>
         )}

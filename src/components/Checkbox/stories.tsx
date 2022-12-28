@@ -44,4 +44,4 @@ export const Default: Story<CheckboxProps> = (args) => (
     </div>
   </>
 )
-16  
+16

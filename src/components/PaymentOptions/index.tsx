@@ -22,7 +22,9 @@ const PaymentOptions = ({ cards, handlePayment }: PaymentOptionsProps) => {
   return (
     <S.Wrapper>
       <S.Body>
-        <Heading color='black' size='small' lineBottom>Payment</Heading>
+        <Heading color="black" size="small" lineBottom>
+          Payment
+        </Heading>
       </S.Body>
 
       <S.CardsList>
@@ -32,19 +34,29 @@ const PaymentOptions = ({ cards, handlePayment }: PaymentOptionsProps) => {
               <img src={card.img} alt={card.flag} />
               {card.number}
             </S.CardInfo>
-            <Radio name='credit-card' id={card.number} value={card.number} onCheck={() => setChecked(true)} />
+            <Radio
+              name="credit-card"
+              id={card.number}
+              value={card.number}
+              onCheck={() => setChecked(true)}
+            />
           </S.CardItem>
         ))}
 
-        <S.AddCard role='button'>
+        <S.AddCard role="button">
           <Add size={14} /> Add a new credit card
         </S.AddCard>
       </S.CardsList>
       <S.Footer>
-        <Button as='a' fullWidth minimal>
+        <Button as="a" fullWidth minimal>
           Continue shopping
         </Button>
-        <Button fullWidth icon={<ShoppingCart />} onClick={handlePayment} disabled={!checked}>
+        <Button
+          fullWidth
+          icon={<ShoppingCart />}
+          onClick={handlePayment}
+          disabled={!checked}
+        >
           Buy now
         </Button>
       </S.Footer>

@@ -9,7 +9,7 @@ export type TextContentProps = {
 const TextContent = ({ title, content }: TextContentProps) => (
   <S.Wrapper>
     {!!title && (
-      <Heading lineLeft lineColor='secondary'>
+      <Heading lineLeft lineColor="secondary">
         {title}
       </Heading>
     )}

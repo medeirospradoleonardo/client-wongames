@@ -28,7 +28,7 @@ describe('<GameInfo />', () => {
   it('should render buttons', () => {
     renderWithTheme(<GameInfo {...props} />)
 
-    // esperar button add to cart 
+    // esperar button add to cart
     // esperar button wishlist
     expect(
       screen.getByRole('button', { name: /add to cart/i })

@@ -11,7 +11,15 @@ export type HighlightProps = {
   alignment?: 'right' | 'left'
 }
 
-const Highlight = ({ title, subtitle, backgroundImage, floatImage, buttonLabel, buttonLink, alignment = 'right' }: HighlightProps) => (
+const Highlight = ({
+  title,
+  subtitle,
+  backgroundImage,
+  floatImage,
+  buttonLabel,
+  buttonLink,
+  alignment = 'right'
+}: HighlightProps) => (
   <S.Wrapper alignment={alignment} backgroundImage={backgroundImage}>
     {!!floatImage && <S.FloatImage src={floatImage} alt={title} />}
     <S.Content>

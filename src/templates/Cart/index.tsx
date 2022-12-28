@@ -29,7 +29,7 @@ const Cart = ({
   return (
     <Base>
       <Container>
-        <Heading lineLeft lineColor='secondary'>
+        <Heading lineLeft lineColor="secondary">
           My cart
         </Heading>
 
@@ -50,7 +50,7 @@ const Cart = ({
       </Container>
 
       <ShowCase
-        title='You may like these games'
+        title="You may like these games"
         games={recommendedGames}
         highlight={recommendedHighlight}
       />

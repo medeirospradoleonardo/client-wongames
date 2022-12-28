@@ -12,9 +12,11 @@ export type ShowCaseProps = {
 
 const ShowCase = ({ title, highlight, games }: ShowCaseProps) => (
   <S.Wrapper>
-    {!!title && <Heading lineLeft lineColor='secondary'>
-      {title}
-    </Heading>}
+    {!!title && (
+      <Heading lineLeft lineColor="secondary">
+        {title}
+      </Heading>
+    )}
     {!!highlight && <Highlight {...highlight} />}
     {!!games && <GameCardSlider items={games} />}
   </S.Wrapper>

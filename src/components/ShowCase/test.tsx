@@ -21,7 +21,8 @@ describe('<Showcase />', () => {
       screen.getByRole('heading', { name: /most popular/i })
     ).toBeInTheDocument()
 
-    expect(screen.getByRole('heading', { name: highlightMock.title })
+    expect(
+      screen.getByRole('heading', { name: highlightMock.title })
     ).toBeInTheDocument()
 
     expect(

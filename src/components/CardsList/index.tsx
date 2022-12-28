@@ -8,12 +8,12 @@ export type CardsListProps = {
 
 const CardsList = ({ cards }: CardsListProps) => (
   <>
-    <Heading lineBottom color='black' size='small'>
+    <Heading lineBottom color="black" size="small">
       My cards
     </Heading>
 
     {cards?.map((card) => (
-      <S.Card>
+      <S.Card key={card.number}>
         <img src={card.img} alt={card.flag} />
         <span>{card.number}</span>
       </S.Card>

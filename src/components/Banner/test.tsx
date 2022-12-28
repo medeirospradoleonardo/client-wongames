@@ -15,10 +15,14 @@ describe('<Banner />', () => {
   it('should render correctly', () => {
     const { container } = renderWithTheme(<Banner {...props} />)
     // verifique se o title existe renderizado (toBeInTheDocument())
-    expect(screen.getByRole('heading', { name: /Defy death/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /Defy death/i })
+    ).toBeInTheDocument()
 
     // verifique se o subtitle existe renderizado
-    expect(screen.getByRole('heading', { name: /Play the new CrashLands season/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /Play the new CrashLands season/i })
+    ).toBeInTheDocument()
 
     // verifique se a imagem existe renderizado
     expect(screen.getByRole('img', { name: /Defy death/i })).toBeInTheDocument()
@@ -27,7 +31,14 @@ describe('<Banner />', () => {
   })
 
   it('should render a Ribbon', () => {
-    renderWithTheme(<Banner {...props} ribbon="My Ribbon" ribbonSize="small" ribbonColor="secondary" />)
+    renderWithTheme(
+      <Banner
+        {...props}
+        ribbon="My Ribbon"
+        ribbonSize="small"
+        ribbonColor="secondary"
+      />
+    )
 
     const ribbon = screen.getByText(/My Ribbon/i)
 

@@ -28,4 +28,3 @@ export const Empty: Story<CartDropdownProps> = (args) => (
     <CartDropdown />
   </div>
 )
-

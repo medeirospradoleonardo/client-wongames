@@ -33,11 +33,7 @@ const Game = ({
   recommendedGames
 }: GameTemplateProps) => (
   <Base>
-    <S.Cover
-      src={cover}
-      role="image"
-      aria-label="cover"
-    />
+    <S.Cover src={cover} role="image" aria-label="cover" />
 
     <S.Main>
       <S.SectionGameInfo>
@@ -49,7 +45,7 @@ const Game = ({
       </S.SectionGallery>
 
       <S.SectionDescription>
-        <TextContent title='Description' content={description} />
+        <TextContent title="Description" content={description} />
       </S.SectionDescription>
 
       <S.SectionGameDetails>
@@ -57,7 +53,11 @@ const Game = ({
         <Divider />
       </S.SectionGameDetails>
 
-      <ShowCase title="Upcoming" games={upcomingGames} highlight={upcomingHighlight} />
+      <ShowCase
+        title="Upcoming"
+        games={upcomingGames}
+        highlight={upcomingHighlight}
+      />
 
       <ShowCase title="You may like these games" games={recommendedGames} />
     </S.Main>

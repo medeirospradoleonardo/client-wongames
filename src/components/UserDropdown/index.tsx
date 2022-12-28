@@ -15,29 +15,31 @@ export type UserDropdownProps = {
 }
 
 const UserDropdown = ({ username }: UserDropdownProps) => (
-  <Dropdown title={
-    <>
-      <AccountCircle size={24} />
-      <S.Username>{username}</S.Username>
-      <ChevronDown size={24} />
-    </>
-  }>
+  <Dropdown
+    title={
+      <>
+        <AccountCircle size={24} />
+        <S.Username>{username}</S.Username>
+        <ChevronDown size={24} />
+      </>
+    }
+  >
     <S.Nav>
-      <Link href='/profile/me' passHref>
+      <Link href="/profile/me" passHref>
         <S.Link>
           <AccountCircle />
           <span>My profile</span>
         </S.Link>
       </Link>
 
-      <Link href='/wishlist' passHref>
+      <Link href="/wishlist" passHref>
         <S.Link>
           <FavoriteBorder />
           <span>Wishlist</span>
         </S.Link>
       </Link>
 
-      <Link href='/logout' passHref>
+      <Link href="/logout" passHref>
         <S.Link>
           <ExitToApp />
           <span>Sign out</span>

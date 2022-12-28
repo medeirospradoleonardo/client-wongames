@@ -18,7 +18,14 @@ export type GameDetailsProps = {
   genres: string[]
 }
 
-const GameDetails = ({ developer, publisher, releaseDate, platforms, rating, genres }: GameDetailsProps) => {
+const GameDetails = ({
+  developer,
+  publisher,
+  releaseDate,
+  platforms,
+  rating,
+  genres
+}: GameDetailsProps) => {
   const platformIcons = {
     linux: <Linux title="Linux" size={18} />,
     mac: <Apple title="Mac" size={18} />,
@@ -26,8 +33,8 @@ const GameDetails = ({ developer, publisher, releaseDate, platforms, rating, gen
   }
   return (
     <S.Wrapper>
-      <MediaMatch greaterThan='small'>
-        <Heading lineLeft lineColor='secondary'>
+      <MediaMatch greaterThan="small">
+        <Heading lineLeft lineColor="secondary">
           Game Details
         </Heading>
       </MediaMatch>
@@ -40,11 +47,13 @@ const GameDetails = ({ developer, publisher, releaseDate, platforms, rating, gen
 
         <S.Block>
           <S.Label>Release Date</S.Label>
-          <S.Description>{new Intl.DateTimeFormat('en-us', {
-            day: 'numeric',
-            month: 'short',
-            year: 'numeric'
-          }).format(new Date(releaseDate))}</S.Description>
+          <S.Description>
+            {new Intl.DateTimeFormat('en-us', {
+              day: 'numeric',
+              month: 'short',
+              year: 'numeric'
+            }).format(new Date(releaseDate))}
+          </S.Description>
         </S.Block>
 
         <S.Block>
@@ -63,7 +72,9 @@ const GameDetails = ({ developer, publisher, releaseDate, platforms, rating, gen
 
         <S.Block>
           <S.Label>Rating</S.Label>
-          <S.Description>{rating === 'BR0' ? 'FREE' : `${rating.replace('BR', '')}+`}</S.Description>
+          <S.Description>
+            {rating === 'BR0' ? 'FREE' : `${rating.replace('BR', '')}+`}
+          </S.Description>
         </S.Block>
 
         <S.Block>

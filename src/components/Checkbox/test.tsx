@@ -7,8 +7,9 @@ import Checkbox from '.'
 
 describe('<Checkbox />', () => {
   it('should render with label', () => {
-    const { container } = renderWithTheme(<Checkbox label="checkbox label" labelFor="check" />)
-
+    const { container } = renderWithTheme(
+      <Checkbox label="checkbox label" labelFor="check" />
+    )
 
     // input a partir do papel / role
     expect(screen.getByRole('checkbox')).toBeInTheDocument()
@@ -29,7 +30,9 @@ describe('<Checkbox />', () => {
   })
 
   it('should render with black label', () => {
-    renderWithTheme(<Checkbox label='checkbox label' labelFor='check' labelColor='black' />)
+    renderWithTheme(
+      <Checkbox label="checkbox label" labelFor="check" labelColor="black" />
+    )
 
     expect(screen.getByText(/checkbox label/i)).toHaveStyle({
       color: theme.colors.black
@@ -39,7 +42,7 @@ describe('<Checkbox />', () => {
   it('should dispatch onCheck when status changes', async () => {
     const onCheck = jest.fn()
 
-    renderWithTheme(<Checkbox label='Checkbox' onCheck={onCheck} />)
+    renderWithTheme(<Checkbox label="Checkbox" onCheck={onCheck} />)
 
     expect(onCheck).not.toHaveBeenCalled()
 
@@ -54,7 +57,7 @@ describe('<Checkbox />', () => {
   it('should dispatch onCheck when status changes', async () => {
     const onCheck = jest.fn()
 
-    renderWithTheme(<Checkbox label='Checkbox' onCheck={onCheck} isChecked />)
+    renderWithTheme(<Checkbox label="Checkbox" onCheck={onCheck} isChecked />)
 
     expect(onCheck).not.toHaveBeenCalled()
 
@@ -67,7 +70,7 @@ describe('<Checkbox />', () => {
   })
 
   it('sould be acessible with tab', () => {
-    renderWithTheme(<Checkbox label='Checkbox' labelFor='Checkbox' />)
+    renderWithTheme(<Checkbox label="Checkbox" labelFor="Checkbox" />)
 
     expect(document.body).toHaveFocus()
 

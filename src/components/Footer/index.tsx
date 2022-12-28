@@ -5,14 +5,14 @@ import * as S from './styles'
 
 const Footer = () => (
   <S.Wrapper>
-    <Logo color='black' />
+    <Logo color="black" />
     <S.Content>
       <S.Column>
-        <Heading color='black' size='small' lineBottom lineColor='secondary'>
+        <Heading color="black" size="small" lineBottom lineColor="secondary">
           Contact Us
         </Heading>
 
-        <a href='mailto:sac@wongames.com'>sac@wongames.com</a>
+        <a href="mailto:sac@wongames.com">sac@wongames.com</a>
       </S.Column>
 
       <S.Column>

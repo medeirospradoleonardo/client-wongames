@@ -11,8 +11,8 @@ const commonSettings: SliderSettings = {
   infinite: false,
   lazyLoad: 'ondemand',
   arrows: true,
-  nextArrow: <ArrowRight aria-label='next image' />,
-  prevArrow: <ArrowLeft aria-label='previous image' />
+  nextArrow: <ArrowRight aria-label="next image" />,
+  prevArrow: <ArrowLeft aria-label="previous image" />
 }
 
 const settings: SliderSettings = {
@@ -43,7 +43,7 @@ const settings: SliderSettings = {
         draggable: true
       }
     }
-  ],
+  ]
 }
 
 const modalSettings: SliderSettings = {
@@ -80,7 +80,7 @@ const Gallery = ({ items }: GalleryProps) => {
       <Slider ref={slider} settings={settings}>
         {items.map((item, index) => (
           <img
-            role='button'
+            role="button"
             key={`thumb-${index}`}
             src={item.src}
             alt={`Thumb - ${item.label}`}
@@ -92,23 +92,19 @@ const Gallery = ({ items }: GalleryProps) => {
         ))}
       </Slider>
 
-      <S.Modal
-        isOpen={isOpen}
-        aria-label="modal"
-        aria-hidden={!isOpen}
-      >
-        <S.Close role="button" aria-label="close modal" onClick={() => setIsOpen(false)}>
+      <S.Modal isOpen={isOpen} aria-label="modal" aria-hidden={!isOpen}>
+        <S.Close
+          role="button"
+          aria-label="close modal"
+          onClick={() => setIsOpen(false)}
+        >
           <Close size={40} />
         </S.Close>
 
         <S.Content>
           <Slider ref={slider} settings={modalSettings}>
             {items.map((item, index) => (
-              <img
-                key={`galley-${index}`}
-                src={item.src}
-                alt={item.label}
-              />
+              <img key={`galley-${index}`} src={item.src} alt={item.label} />
             ))}
           </Slider>
         </S.Content>

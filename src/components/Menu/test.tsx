@@ -15,7 +15,7 @@ describe('<Menu />', () => {
   it('should render the open/close mobile menu', () => {
     renderWithTheme(<Menu />)
 
-    // selecionar o nosso menuFull  
+    // selecionar o nosso menuFull
     const fullMenuElement = screen.getByRole('navigation', { hidden: true })
 
     // verificar se o menu ta escondido
@@ -44,7 +44,7 @@ describe('<Menu />', () => {
   })
 
   it('should show wishlist and account when logged in', () => {
-    renderWithTheme(<Menu username='will' />)
+    renderWithTheme(<Menu username="will" />)
 
     expect(screen.getByText(/my account/i)).toBeInTheDocument()
     expect(screen.getByText(/wishlist/i)).toBeInTheDocument()
@@ -52,5 +52,4 @@ describe('<Menu />', () => {
     expect(screen.queryByText(/sign i/i)).not.toBeInTheDocument()
     expect(screen.queryByText(/sign up/i)).not.toBeInTheDocument()
   })
-
 })

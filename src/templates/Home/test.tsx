@@ -44,6 +44,5 @@ describe('<Home />', () => {
 
     expect(screen.getByTestId('Mock BannerSlider')).toBeInTheDocument()
     expect(screen.getAllByTestId('Mock ShowCase')).toHaveLength(5)
-
   })
 })

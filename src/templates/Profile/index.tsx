@@ -16,13 +16,13 @@ const Profile = ({ children }: ProfileTemplateProps) => {
   return (
     <Base>
       <Container>
-        <Heading lineLeft lineColor='secondary'>My profile</Heading>
+        <Heading lineLeft lineColor="secondary">
+          My profile
+        </Heading>
 
         <S.Main>
           <ProfileMenu activeLink={asPath} />
-          <S.Content>
-            {children}
-          </S.Content>
+          <S.Content>{children}</S.Content>
         </S.Main>
       </Container>
     </Base>

@@ -42,11 +42,7 @@ describe('<TextField />', () => {
   it('Changes its value when typing', async () => {
     const onInput = jest.fn()
     renderWithTheme(
-      <TextField
-        onInput={onInput}
-        label="TextField"
-        name="TextField"
-      />
+      <TextField onInput={onInput} label="TextField" name="TextField" />
     )
 
     const input = screen.getByRole('textbox')
@@ -98,9 +94,7 @@ describe('<TextField />', () => {
   })
 
   it('Is accessible by tab', () => {
-    renderWithTheme(
-      <TextField label="TextField" name="TextField" />
-    )
+    renderWithTheme(<TextField label="TextField" name="TextField" />)
 
     const input = screen.getByLabelText('TextField')
     expect(document.body).toHaveFocus()
@@ -110,13 +104,7 @@ describe('<TextField />', () => {
   })
 
   it('Is not accessible by tab when disabled', () => {
-    renderWithTheme(
-      <TextField
-        label="TextField"
-        name="TextField"
-        disabled
-      />
-    )
+    renderWithTheme(<TextField label="TextField" name="TextField" disabled />)
 
     const input = screen.getByLabelText('TextField')
     expect(document.body).toHaveFocus()

@@ -21,7 +21,7 @@ const Wishlist = ({
 }: WishlistTemplateProps) => (
   <Base>
     <Container>
-      <Heading lineLeft lineColor='secondary'>
+      <Heading lineLeft lineColor="secondary">
         Wishlist
       </Heading>
 
@@ -33,17 +33,16 @@ const Wishlist = ({
         </Grid>
       ) : (
         <Empty
-          title='Your wishlist is empty'
-          description='Games added to your wishlist will appear here'
+          title="Your wishlist is empty"
+          description="Games added to your wishlist will appear here"
           hasLink
         />
       )}
 
-
       <Divider />
     </Container>
     <ShowCase
-      title='You may like these games'
+      title="You may like these games"
       games={recommendedGames}
       highlight={recommendedHighlight}
     />
