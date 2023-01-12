@@ -35,9 +35,7 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
   }
 
   const handleShowMore = () => {
-    fetchMore({
-      variables: { limit: 15, start: data?.games.length }
-    })
+    fetchMore({ variables: { limit: 15, start: data?.games.length } })
   }
 
   return (
