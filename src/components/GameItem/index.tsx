@@ -1,4 +1,5 @@
 import { Download } from '@styled-icons/boxicons-solid/Download'
+import Image from 'next/image'
 
 import * as S from './styles'
 
@@ -27,7 +28,7 @@ const GameItem = ({
   <S.Wrapper>
     <S.GameContent>
       <S.ImageBox>
-        <img src={img} alt={title} />
+        <Image src={img} alt={title} />
       </S.ImageBox>
 
       <S.Content>
@@ -52,7 +53,7 @@ const GameItem = ({
         <p>{paymentInfo.purchaseDate}</p>
         <S.CardInfo>
           <span>{paymentInfo.number}</span>
-          <img src={paymentInfo.img} alt={paymentInfo.flag} />
+          <Image src={paymentInfo.img} alt={paymentInfo.flag} />
         </S.CardInfo>
       </S.PaymentContent>
     )}
