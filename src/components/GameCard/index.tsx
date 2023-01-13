@@ -46,7 +46,7 @@ const GameCard = ({
     )}
     <Link href={`game/${slug}`} passHref>
       <S.ImageBox>
-        <Image src={img} alt={title} />
+        <img src={img} alt={title} />
       </S.ImageBox>
     </Link>
     <S.Content>

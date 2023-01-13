@@ -80,7 +80,7 @@ const Gallery = ({ items }: GalleryProps) => {
     <S.Wrapper>
       <Slider ref={slider} settings={settings}>
         {items.map((item, index) => (
-          <Image
+          <img
             role="button"
             key={`thumb-${index}`}
             src={item.src}
@@ -105,7 +105,7 @@ const Gallery = ({ items }: GalleryProps) => {
         <S.Content>
           <Slider ref={slider} settings={modalSettings}>
             {items.map((item, index) => (
-              <Image key={`galley-${index}`} src={item.src} alt={item.label} />
+              <img key={`galley-${index}`} src={item.src} alt={item.label} />
             ))}
           </Slider>
         </S.Content>

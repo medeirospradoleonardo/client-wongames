@@ -15,7 +15,7 @@ const CardsList = ({ cards }: CardsListProps) => (
 
     {cards?.map((card) => (
       <S.Card key={card.number}>
-        <Image src={card.img} alt={card.flag} />
+        <img src={card.img} alt={card.flag} />
         <span>{card.number}</span>
       </S.Card>
     ))}

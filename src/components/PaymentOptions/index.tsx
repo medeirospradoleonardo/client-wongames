@@ -32,7 +32,7 @@ const PaymentOptions = ({ cards, handlePayment }: PaymentOptionsProps) => {
         {cards?.map((card) => (
           <S.CardItem key={card.number}>
             <S.CardInfo>
-              <Image src={card.img} alt={card.flag} />
+              <img src={card.img} alt={card.flag} />
               {card.number}
             </S.CardInfo>
             <Radio
