@@ -9,7 +9,6 @@ import Button from 'components/Button'
 import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon'
 import * as S from './styles'
 import formatPrice from 'utils/format-price'
-import Image from 'next/image'
 
 export type GameCardProps = {
   slug: string

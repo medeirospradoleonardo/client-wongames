@@ -6,7 +6,6 @@ import SlickSlider from 'react-slick'
 import Slider, { SliderSettings } from 'components/Slider'
 import { useEffect, useRef, useState } from 'react'
 import * as S from './styles'
-import Image from 'next/image'
 
 const commonSettings: SliderSettings = {
   infinite: false,

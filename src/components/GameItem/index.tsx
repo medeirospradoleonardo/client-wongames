@@ -1,5 +1,4 @@
 import { Download } from '@styled-icons/boxicons-solid/Download'
-import Image from 'next/image'
 
 import * as S from './styles'
 
