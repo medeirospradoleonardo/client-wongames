@@ -3,7 +3,7 @@ import styled, { css, DefaultTheme } from 'styled-components'
 
 import * as ButtonStyles from 'components/Button/styles'
 
-export const Wrapper = styled.main``
+export const Wrapper = styled.div``
 
 export const Body = styled.div`
   ${({ theme }) => css`
@@ -11,7 +11,6 @@ export const Body = styled.div`
     padding: ${theme.spacings.small};
   `}
 `
-
 export const Footer = styled.div`
   ${({ theme }) => css`
     background: ${tint(0.2, theme.colors.lightGray)};
@@ -20,7 +19,6 @@ export const Footer = styled.div`
     padding: ${theme.spacings.small};
     display: flex;
     align-items: center;
-
     ${ButtonStyles.Wrapper} {
       padding-left: ${theme.spacings.xxsmall};
       padding-right: ${theme.spacings.xxsmall};
@@ -28,12 +26,10 @@ export const Footer = styled.div`
     }
   `}
 `
-
 export const CardsList = styled.div`
   display: flex;
   flex-direction: column;
 `
-
 export const CardInfo = styled.span`
   ${({ theme }) => css`
     display: flex;
@@ -43,7 +39,6 @@ export const CardInfo = styled.span`
     }
   `}
 `
-
 const ItemStyles = (theme: DefaultTheme) => css`
   background: ${theme.colors.lightGray};
   border-radius: 0.2rem;
@@ -54,7 +49,6 @@ const ItemStyles = (theme: DefaultTheme) => css`
   display: flex;
   align-items: center;
 `
-
 export const CardItem = styled.label`
   ${({ theme }) => css`
     ${ItemStyles(theme)};
@@ -64,7 +58,6 @@ export const CardItem = styled.label`
     }
   `}
 `
-
 export const AddCard = styled.div`
   ${({ theme }) => css`
     ${ItemStyles(theme)};

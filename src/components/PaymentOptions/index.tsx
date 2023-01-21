@@ -25,28 +25,26 @@ const PaymentOptions = ({ cards, handlePayment }: PaymentOptionsProps) => {
         <Heading color="black" size="small" lineBottom>
           Payment
         </Heading>
+        <S.CardsList>
+          {cards?.map((card) => (
+            <S.CardItem key={card.number}>
+              <S.CardInfo>
+                <img src={card.img} alt={card.flag} />
+                {card.number}
+              </S.CardInfo>
+              <Radio
+                name="credit-card"
+                id={card.number}
+                value={card.number}
+                onCheck={() => setChecked(true)}
+              />
+            </S.CardItem>
+          ))}
+          <S.AddCard role="button">
+            <Add size={14} /> Add a new credit card
+          </S.AddCard>
+        </S.CardsList>
       </S.Body>
-
-      <S.CardsList>
-        {cards?.map((card) => (
-          <S.CardItem key={card.number}>
-            <S.CardInfo>
-              <img src={card.img} alt={card.flag} />
-              {card.number}
-            </S.CardInfo>
-            <Radio
-              name="credit-card"
-              id={card.number}
-              value={card.number}
-              onCheck={() => setChecked(true)}
-            />
-          </S.CardItem>
-        ))}
-
-        <S.AddCard role="button">
-          <Add size={14} /> Add a new credit card
-        </S.AddCard>
-      </S.CardsList>
       <S.Footer>
         <Button as="a" fullWidth minimal>
           Continue shopping
