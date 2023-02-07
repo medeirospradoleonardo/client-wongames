@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-import { signIn } from 'next-auth/client'
 import { Lock, ErrorOutline } from '@styled-icons/material-outlined'
 
 import Button from 'components/Button'
@@ -8,14 +7,14 @@ import TextField from 'components/TextField'
 import { FormWrapper, FormLoading, FormError } from 'components/Form'
 
 import { FieldErrors, resetValidate } from 'utils/validation'
+import { signIn } from 'next-auth/client'
 
 const FormResetPassword = () => {
   const [formError, setFormError] = useState('')
   const [fieldError, setFieldError] = useState<FieldErrors>({})
   const [values, setValues] = useState({ password: '', confirm_password: '' })
   const [loading, setLoading] = useState(false)
-  const routes = useRouter()
-  const { push, query } = routes
+  const { query } = useRouter()
 
   const handleInput = (field: string, value: string) => {
     setValues((s) => ({ ...s, [field]: value }))
@@ -35,21 +34,33 @@ const FormResetPassword = () => {
 
     setFieldError({})
 
-    // sign in
-    const result = await signIn('credentials', {
-      ...values,
-      redirect: false,
-      callbackUrl: `${window.location.origin}${query?.callbackUrl || ''}`
-    })
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/auth/reset-password`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          password: values.password,
+          passwordConfirmation: values.confirm_password,
+          code: query.code
+        })
+      }
+    )
 
-    if (result?.url) {
-      return push(result?.url)
+    const data = await response.json()
+
+    if (data.error) {
+      setFormError(data.message[0].messages[0].message)
+      setLoading(false)
+    } else {
+      signIn('credentials', {
+        email: data.user.email,
+        password: values.password,
+        callbackUrl: '/'
+      })
     }
-
-    setLoading(false)
-
-    // jogar o erro
-    setFormError('username or password is invalid')
   }
 
   return (
