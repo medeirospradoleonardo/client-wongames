@@ -6,7 +6,7 @@ import Button from 'components/Button'
 import TextField from 'components/TextField'
 import { FormWrapper, FormLoading, FormError } from 'components/Form'
 
-import { FieldErrors, resetValidate } from 'utils/validation'
+import { FieldErrors, resetValidate } from 'utils/validations'
 import { signIn } from 'next-auth/client'
 
 const FormResetPassword = () => {

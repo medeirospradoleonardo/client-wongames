@@ -1,3 +1,4 @@
+import 'setimmediate'
 global.fetch = require('node-fetch')
 
 import { server } from '../src/utils/mockServer/server'
@@ -8,11 +9,12 @@ beforeAll(() => {
 })
 
 afterEach(() => {
-  // reseta todos os handlers para caso eles sejam chamados novamente
+  // reseta todos os handlers para caso eles sejam chamados
+  // novament
   server.resetHandlers()
 })
 
 afterAll(() => {
-  // fecha o server limpa os testes
+  // fecha o server e limpa os testes
   server.close()
 })

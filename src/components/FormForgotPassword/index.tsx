@@ -1,21 +1,22 @@
 import { useState } from 'react'
+import { useRouter } from 'next/router'
+
 import {
   CheckCircleOutline,
   Email,
   ErrorOutline
 } from '@styled-icons/material-outlined'
 
-import Button from 'components/Button'
-import TextField from 'components/TextField'
 import {
   FormWrapper,
   FormLoading,
   FormError,
   FormSuccess
 } from 'components/Form'
+import Button from 'components/Button'
+import TextField from 'components/TextField'
 
-import { FieldErrors, forgotValidate } from 'utils/validation'
-import { useRouter } from 'next/router'
+import { FieldErrors, forgotValidate } from 'utils/validations'
 
 const FormForgotPassword = () => {
   const { query } = useRouter()
@@ -70,7 +71,7 @@ const FormForgotPassword = () => {
       {success ? (
         <FormSuccess>
           <CheckCircleOutline />
-          You just receive an email!
+          You just received an email!
         </FormSuccess>
       ) : (
         <>
@@ -89,6 +90,7 @@ const FormForgotPassword = () => {
               onInputChange={(v) => handleInput('email', v)}
               icon={<Email />}
             />
+
             <Button type="submit" size="large" fullWidth disabled={loading}>
               {loading ? <FormLoading /> : <span>Send email</span>}
             </Button>

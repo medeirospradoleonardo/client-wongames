@@ -9,7 +9,7 @@ import TextField from 'components/TextField'
 import { FormWrapper, FormLink, FormLoading, FormError } from 'components/Form'
 
 import * as S from './styles'
-import { FieldErrors, signInValidate } from 'utils/validation'
+import { FieldErrors, signInValidate } from 'utils/validations'
 
 const FormSignIn = () => {
   const [formError, setFormError] = useState('')
