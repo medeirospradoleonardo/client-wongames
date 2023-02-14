@@ -71,8 +71,8 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
   })
 
   useEffect(() => {
-    setWishlistItems(data?.wishlists[0].games || [])
-    setWishlistId(data?.wishlists[0].id)
+    setWishlistItems(data?.wishlists[0]?.games || [])
+    setWishlistId(data?.wishlists[0]?.id)
   }, [data])
 
   const wishlistIds = useMemo(
