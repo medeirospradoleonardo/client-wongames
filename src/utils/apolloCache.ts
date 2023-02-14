@@ -12,7 +12,7 @@ export default new InMemoryCache({
       fields: {
         games: {
           merge(_, incoming) {
-            incoming
+            return incoming
           }
         }
       }
