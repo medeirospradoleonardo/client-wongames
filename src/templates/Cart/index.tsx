@@ -8,17 +8,14 @@ import ShowCase from 'components/ShowCase'
 import Base from 'templates/Base'
 
 import * as S from './styles'
-import PaymentOptions, { PaymentOptionsProps } from 'components/PaymentOptions'
+import PaymentForm from 'components/PaymentForm'
 
 export type CartProps = {
   recommendedGames: GameCardProps[]
   recommendedHighlight: HighlightProps
-} & CartListProps &
-  Pick<PaymentOptionsProps, 'cards'>
+} & CartListProps
 
-const Cart = ({ recommendedGames, recommendedHighlight, cards }: CartProps) => {
-  const handlePayment = () => ({})
-
+const Cart = ({ recommendedGames, recommendedHighlight }: CartProps) => {
   return (
     <Base>
       <Container>
@@ -28,7 +25,7 @@ const Cart = ({ recommendedGames, recommendedHighlight, cards }: CartProps) => {
         <S.Content>
           <CartList />
 
-          <PaymentOptions cards={cards} handlePayment={handlePayment} />
+          <PaymentForm />
         </S.Content>
         <Divider />
       </Container>
