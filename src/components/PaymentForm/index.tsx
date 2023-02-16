@@ -4,10 +4,16 @@ import { ErrorOutline, ShoppingCart } from '@styled-icons/material-outlined'
 import Button from 'components/Button'
 import Heading from 'components/Heading'
 import { useCart } from 'hooks/use-cart'
+import { Session } from 'next-auth/client'
 import { useState, useEffect } from 'react'
+import { createPaymentIntent } from 'utils/stripe/methods'
 import * as S from './styles'
 
-const PaymentForm = () => {
+type PaymentFormProps = {
+  session: Session
+}
+
+const PaymentForm = ({ session }: PaymentFormProps) => {
   const { items } = useCart()
   const [error, setError] = useState<string | null>(null)
   const [disabled, setDisabled] = useState(true)
@@ -15,17 +21,37 @@ const PaymentForm = () => {
   const [freeGames, setFreeGames] = useState(false)
 
   useEffect(() => {
-    if (items.length) {
-      // bater na API /orders/create-payment-intent
-      // enviar os items do carrinho
-      // se eu receber free games: true => setFreeGames
-      // faco o fluxo do jogo gratuito
-      // se eu receber um erro
-      // setError
-      // senao o paymentIntent foi valido
-      // setClientSecret
+    async function setPaymentMode() {
+      if (items.length) {
+        // bater na API /orders/create-payment-intent
+        const data = await createPaymentIntent({
+          items,
+          token: session.jwt
+        })
+
+        // se eu receber free games: true => setFreeGames
+        // faco o fluxo do jogo gratuito
+        if (data.freeGames) {
+          setFreeGames(true)
+          console.log(data.freeGames)
+          return
+        }
+
+        // se eu receber um erro
+        // setError
+        if (data.error) {
+          setError(data.error)
+        } else {
+          // senao o paymentIntent foi valido
+          // setClientSecret
+          setClientSecret(data.client_secret)
+          console.log(data.client_secret)
+        }
+      }
     }
-  }, [items])
+
+    setPaymentMode()
+  }, [items, session])
 
   const handleChange = async (event: StripeCardElementChangeEvent) => {
     setDisabled(event.empty)
