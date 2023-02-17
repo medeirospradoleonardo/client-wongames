@@ -6,7 +6,7 @@ import { Container } from 'components/Container'
 import * as S from './styles'
 import { HighlightProps } from 'components/Highlight'
 import BannerSlider from 'components/BannerSlider'
-import ShowCase from 'components/ShowCase'
+import Showcase from 'components/Showcase'
 import Base from 'templates/Base'
 
 export type HomeTemplateProps = {
@@ -46,22 +46,22 @@ const Home = ({
     </Container>
 
     <S.SectionNews>
-      <ShowCase title={newGamesTitle} games={newGames} color="black" />
+      <Showcase title={newGamesTitle} games={newGames} color="black" />
     </S.SectionNews>
 
-    <ShowCase
+    <Showcase
       title={mostPopularGamesTitle}
       highlight={mostPopularHighlight}
       games={mostPopularGames}
     />
 
-    <ShowCase
+    <Showcase
       title={upcomingGamesTitle}
       games={upcomingGames}
       highlight={upcomingHighlight}
     />
 
-    <ShowCase
+    <Showcase
       title={freeGamesTitle}
       highlight={freeHighlight}
       games={freeGames}

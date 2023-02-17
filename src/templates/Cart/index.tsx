@@ -4,7 +4,7 @@ import { Divider } from 'components/Divider'
 import { GameCardProps } from 'components/GameCard'
 import { HighlightProps } from 'components/Highlight'
 import Heading from 'components/Heading'
-import ShowCase from 'components/ShowCase'
+import ShowCase from 'components/Showcase'
 import Base from 'templates/Base'
 
 import * as S from './styles'

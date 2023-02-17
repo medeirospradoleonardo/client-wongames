@@ -6,7 +6,7 @@ import { Grid } from 'components/Grid'
 import Heading from 'components/Heading'
 import { HighlightProps } from 'components/Highlight'
 import Loader from 'components/Loader'
-import ShowCase from 'components/ShowCase'
+import ShowCase from 'components/Showcase'
 import { useWishlist } from 'hooks/use-wishlist'
 import Base from 'templates/Base'
 

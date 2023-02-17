@@ -8,7 +8,7 @@ import TextContent from 'components/TextContent'
 import GameDetails, { GameDetailsProps } from 'components/GameDetails'
 import { GameCardProps } from 'components/GameCard'
 import { HighlightProps } from 'components/Highlight'
-import ShowCase from 'components/ShowCase'
+import Showcase from 'components/Showcase'
 import { Divider } from 'components/Divider'
 
 export type GameTemplateProps = {
@@ -57,13 +57,13 @@ const Game = ({
         <Divider />
       </S.SectionGameDetails>
 
-      <ShowCase
+      <Showcase
         title={upcomingTitle}
         games={upcomingGames}
         highlight={upcomingHighlight}
       />
 
-      <ShowCase title={recommendedTitle} games={recommendedGames} />
+      <Showcase title={recommendedTitle} games={recommendedGames} />
     </S.Main>
   </Base>
 )
