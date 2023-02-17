@@ -3,11 +3,36 @@ import { ArrowForwardIos as ArrowRight } from '@styled-icons/material-outlined/A
 
 import GameCard, { GameCardProps } from 'components/GameCard'
 import Slider, { SliderSettings } from 'components/Slider'
+import { MouseEventHandler } from 'react'
 import * as S from './styles'
 
 export type GameCardSliderProps = {
   items: GameCardProps[]
   color?: 'white' | 'black'
+}
+
+type ArrowsProps = {
+  className?: string
+  style?: React.CSSProperties
+  onClick?: MouseEventHandler<HTMLDivElement>
+}
+
+function SampleNextArrow(props: ArrowsProps) {
+  const { className, style, onClick } = props
+  return (
+    <div className={className} style={{ ...style }} onClick={onClick}>
+      <ArrowRight aria-label="next games" />
+    </div>
+  )
+}
+
+function SamplePrevArrow(props: ArrowsProps) {
+  const { className, style, onClick } = props
+  return (
+    <div className={className} style={{ ...style }} onClick={onClick}>
+      <ArrowLeft aria-label="previous games" />
+    </div>
+  )
 }
 
 const settings: SliderSettings = {
@@ -45,8 +70,8 @@ const settings: SliderSettings = {
       }
     }
   ],
-  nextArrow: <ArrowRight aria-label="next games" />,
-  prevArrow: <ArrowLeft aria-label="previous games" />
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />
 }
 
 const GameCardSlider = ({ items, color = 'white' }: GameCardSliderProps) => (
