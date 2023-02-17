@@ -4,15 +4,39 @@ import { ArrowForwardIos as ArrowRight } from '@styled-icons/material-outlined/A
 import SlickSlider from 'react-slick'
 
 import Slider, { SliderSettings } from 'components/Slider'
-import { useEffect, useRef, useState } from 'react'
+import { MouseEventHandler, useEffect, useRef, useState } from 'react'
 import * as S from './styles'
+
+type ArrowsProps = {
+  className?: string
+  style?: React.CSSProperties
+  onClick?: MouseEventHandler<HTMLDivElement>
+}
+
+function SampleNextArrow(props: ArrowsProps) {
+  const { className, style, onClick } = props
+  return (
+    <div className={className} style={{ ...style }} onClick={onClick}>
+      <ArrowRight aria-label="next image" />
+    </div>
+  )
+}
+
+function SamplePrevArrow(props: ArrowsProps) {
+  const { className, style, onClick } = props
+  return (
+    <div className={className} style={{ ...style }} onClick={onClick}>
+      <ArrowLeft aria-label="previous image" />
+    </div>
+  )
+}
 
 const commonSettings: SliderSettings = {
   infinite: false,
   lazyLoad: 'ondemand',
   arrows: true,
-  nextArrow: <ArrowRight aria-label="next image" />,
-  prevArrow: <ArrowLeft aria-label="previous image" />
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />
 }
 
 const settings: SliderSettings = {
