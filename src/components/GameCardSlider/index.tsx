@@ -20,8 +20,13 @@ type ArrowsProps = {
 function SampleNextArrow(props: ArrowsProps) {
   const { className, style, onClick } = props
   return (
-    <div className={className} style={{ ...style }} onClick={onClick}>
-      <ArrowRight aria-label="next games" />
+    <div
+      className={className}
+      style={{ ...style }}
+      onClick={onClick}
+      aria-label="next games"
+    >
+      <ArrowRight />
     </div>
   )
 }
@@ -29,8 +34,13 @@ function SampleNextArrow(props: ArrowsProps) {
 function SamplePrevArrow(props: ArrowsProps) {
   const { className, style, onClick } = props
   return (
-    <div className={className} style={{ ...style }} onClick={onClick}>
-      <ArrowLeft aria-label="previous games" />
+    <div
+      className={className}
+      style={{ ...style }}
+      onClick={onClick}
+      aria-label="previous games"
+    >
+      <ArrowLeft />
     </div>
   )
 }
