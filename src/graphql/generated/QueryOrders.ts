@@ -4,43 +4,42 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: QueryOrder
+// GraphQL query operation: QueryOrders
 // ====================================================
 
-export interface QueryOrder_orders_games_cover {
+export interface QueryOrders_orders_games_cover {
   __typename: "UploadFile";
   url: string;
 }
 
-export interface QueryOrder_orders_games_developers {
+export interface QueryOrders_orders_games_developers {
   __typename: "Developer";
   name: string;
 }
 
-export interface QueryOrder_orders_games {
+export interface QueryOrders_orders_games {
   __typename: "Game";
   id: string;
   name: string;
   slug: string;
-  cover: QueryOrder_orders_games_cover | null;
-  developers: QueryOrder_orders_games_developers[];
+  cover: QueryOrders_orders_games_cover | null;
+  developers: QueryOrders_orders_games_developers[];
   price: number;
 }
 
-export interface QueryOrder_orders {
+export interface QueryOrders_orders {
   __typename: "Order";
   id: string;
-  payment_intent_id: string | null;
   created_at: any;
   card_brand: string | null;
   card_last4: string | null;
-  games: QueryOrder_orders_games[];
+  games: QueryOrders_orders_games[];
 }
 
-export interface QueryOrder {
-  orders: QueryOrder_orders[];
+export interface QueryOrders {
+  orders: QueryOrders_orders[];
 }
 
-export interface QueryOrderVariables {
+export interface QueryOrdersVariables {
   identifier: string;
 }
