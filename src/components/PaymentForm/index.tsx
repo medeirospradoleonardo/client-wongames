@@ -6,6 +6,7 @@ import { FormLoading } from 'components/Form'
 import Heading from 'components/Heading'
 import { useCart } from 'hooks/use-cart'
 import { Session } from 'next-auth/client'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { createPayment, createPaymentIntent } from 'utils/stripe/methods'
@@ -143,9 +144,11 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
           )}
         </S.Body>
         <S.Footer>
-          <Button as="a" fullWidth minimal>
-            Continue shopping
-          </Button>
+          <Link href="/" passHref>
+            <Button as="a" fullWidth minimal>
+              Continue shopping
+            </Button>
+          </Link>
           <Button
             fullWidth
             icon={loading ? <FormLoading /> : <ShoppingCart />}
