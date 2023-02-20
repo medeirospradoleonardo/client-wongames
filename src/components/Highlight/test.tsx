@@ -13,24 +13,27 @@ const props = {
 
 describe('<Highlight />', () => {
   it('should render headings and button', () => {
-    render(<Highlight {...props} />)
+    const { container } = render(<Highlight {...props} />)
 
     expect(
       screen.getByRole('heading', { name: /heading 1/i })
     ).toBeInTheDocument()
+
     expect(
       screen.getByRole('heading', { name: /heading 2/i })
     ).toBeInTheDocument()
 
     expect(screen.getByRole('link', { name: /buy now/i })).toBeInTheDocument()
+
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render background image', () => {
-    const { container } = render(<Highlight {...props} />)
+    render(<Highlight {...props} />)
 
-    expect(container.firstChild).toHaveStyle({
-      backgroundImage: `url(${props.backgroundImage})`
-    })
+    expect(
+      screen.getByRole('img', { name: `${props.title} background` })
+    ).toHaveAttribute('src', `${props.backgroundImage}`)
   })
 
   it('should render float image', () => {
@@ -55,7 +58,7 @@ describe('<Highlight />', () => {
     })
   })
 
-  it('should render align left by default', () => {
+  it('should render align left when argument is passed', () => {
     const { container } = render(<Highlight {...props} alignment="left" />)
 
     expect(container.firstChild).toHaveStyleRule(

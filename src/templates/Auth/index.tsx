@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Heading from 'components/Heading'
 import Logo from 'components/Logo'
 import * as S from './styles'
+import Image from 'next/image'
 
 type AuthProps = {
   title: string
@@ -12,6 +13,12 @@ type AuthProps = {
 const Auth = ({ title, children }: AuthProps) => (
   <S.Wrapper>
     <S.BannerBlock>
+      <Image
+        src="/img/auth-bg.jpg"
+        alt="Won Games Auth Page"
+        layout="fill"
+        objectFit="cover"
+      />
       <S.BannerContent>
         <Link href="/">
           <a>

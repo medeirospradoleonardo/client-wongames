@@ -5,9 +5,8 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     padding: ${theme.spacings.small};
     border-bottom: 0.1rem solid ${theme.colors.lightGray};
-
     ${media.greaterThan('medium')`
-        display: flex;
+      display: flex;
     `}
   `}
 `
@@ -23,13 +22,11 @@ export const ImageBox = styled.div`
     margin-right: 1.2rem;
     width: 9.6rem;
     height: 5.6rem;
-
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-
     ${media.greaterThan('medium')`
       margin-right: ${theme.spacings.xsmall};
       width: 15rem;
@@ -89,6 +86,12 @@ export const DownloadLink = styled.a`
   ${({ theme }) => css`
     color: ${theme.colors.primary};
     margin-left: ${theme.spacings.xxsmall};
+    position: relative;
+    & > svg {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   `}
 `
 
@@ -114,8 +117,8 @@ export const CardInfo = styled.div`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
-    img {
-      margin-left: ${theme.spacings.xxsmall};
+    span {
+      margin-right: ${theme.spacings.xxsmall};
     }
     ${media.lessThan('medium')`
       margin-top: ${theme.spacings.xsmall};
