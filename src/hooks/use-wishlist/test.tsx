@@ -1,6 +1,6 @@
 import { MockedProvider } from '@apollo/client/testing'
-import { waitFor } from '@testing-library/react'
-import { act, renderHook } from '@testing-library/react-hooks'
+import { renderHook } from '@testing-library/react-hooks'
+import { act, waitFor } from 'utils/test-utils'
 import { useWishlist, WishlistProvider } from '.'
 import {
   createWishlistMock,
