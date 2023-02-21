@@ -1,19 +1,20 @@
-import { Container } from 'components/Container'
-import { Divider } from 'components/Divider'
-import Empty from 'components/Empty'
-import GameCard, { GameCardProps } from 'components/GameCard'
-import { Grid } from 'components/Grid'
-import Heading from 'components/Heading'
-import { HighlightProps } from 'components/Highlight'
-import Loader from 'components/Loader'
-import ShowCase from 'components/Showcase'
-import { useWishlist } from 'hooks/use-wishlist'
 import Base from 'templates/Base'
+
+import Heading from 'components/Heading'
+import Showcase from 'components/Showcase'
+import GameCard, { GameCardProps } from 'components/GameCard'
+import { Divider } from 'components/Divider'
+import { Container } from 'components/Container'
+import { Grid } from 'components/Grid'
+import { HighlightProps } from 'components/Highlight'
+import Empty from 'components/Empty'
+import { useWishlist } from 'hooks/use-wishlist'
+import Loader from 'components/Loader'
 
 import * as S from './styles'
 
 export type WishlistTemplateProps = {
-  recommendedTitle?: string
+  recommendedTitle: string
   recommendedGames: GameCardProps[]
   recommendedHighlight: HighlightProps
 }
@@ -27,7 +28,7 @@ const Wishlist = ({
 
   return (
     <Base>
-      <Container>
+      <Container data-cy="wishlist">
         <Heading lineLeft lineColor="secondary">
           Wishlist
         </Heading>
@@ -51,8 +52,9 @@ const Wishlist = ({
         )}
         <Divider />
       </Container>
-      <ShowCase
-        title={recommendedTitle || 'You may like these games'}
+
+      <Showcase
+        title={recommendedTitle}
         games={recommendedGames}
         highlight={recommendedHighlight}
       />
