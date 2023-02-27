@@ -13,7 +13,7 @@ describe.skip('Cypress TS', () => {
     cy.findByTitle(/Mudar o tema/i).click()
     cy.get('.dark').should('exist')
   })
-  
+
   it('should visit won games', () => {
     cy.visit('https://wongames.willianjusten.com.br')
 
