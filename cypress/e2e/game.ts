@@ -35,7 +35,7 @@ describe('Game Page', () => {
       cy.findByText(/dec 8, 2020/i).should('exist')
       cy.findByRole('img', { name: /windows/i }).should('exist')
       cy.findByText(/free/i).should('exist')
-      cy.findByText('Role-playing / Action / Sci-fi').should('exist')
+      cy.findByText('Role-playing / Sci-fi / Action').should('exist')
     })
 
     cy.shouldRenderShowcase({ name: "You may like these games", highlight: false })

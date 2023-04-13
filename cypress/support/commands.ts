@@ -41,7 +41,7 @@ Cypress.Commands.add('shouldRenderBanner', () => {
     cy.get('.slick-dots > :nth-child(2) > button').click()
     cy.wait(500)
 
-    cy.findByRole('heading', { name: /horizon zero dawn/i })
+    cy.findByRole('heading', { name: /new games/i })
     cy.findByRole('link', { name: /buy now/i })
 
     cy.get('.slick-dots > :nth-child(3) > button').click()
