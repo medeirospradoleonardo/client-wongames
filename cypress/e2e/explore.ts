@@ -40,4 +40,55 @@ describe('Explore Page', () => {
       cy.shouldBeGreaterThen(0)
     })
   })
+
+  it('should filter by price', () => {
+    cy.findByText(/highest to lowest/i).click()
+    cy.findByText(/free/i).click()
+
+    cy.location('href').should('contain', 'price_lte=0')
+
+    cy.getByDataCy('game-card').first().within(() => {
+      cy.findByText('$0.00').should('exist')
+    })
+
+    cy.findByText('Under $50').click()
+
+    cy.location('href').should('contain', 'price_lte=50')
+
+    cy.getByDataCy('game-card').first().within(() => {
+      cy.shouldBeLessThen(50)
+    })
+
+    cy.findByText('Under $100').click()
+
+    cy.location('href').should('contain', 'price_lte=100')
+
+    cy.getByDataCy('game-card').first().within(() => {
+      cy.shouldBeLessThen(100)
+    })
+
+    cy.findByText('Under $150').click()
+
+    cy.location('href').should('contain', 'price_lte=150')
+
+    cy.getByDataCy('game-card').first().within(() => {
+      cy.shouldBeLessThen(150)
+    })
+
+    cy.findByText('Under $250').click()
+
+    cy.location('href').should('contain', 'price_lte=250')
+
+    cy.getByDataCy('game-card').first().within(() => {
+      cy.shouldBeLessThen(250)
+    })
+
+    cy.findByText('Under $500').click()
+
+    cy.location('href').should('contain', 'price_lte=500')
+
+    cy.getByDataCy('game-card').first().within(() => {
+      cy.shouldBeLessThen(500)
+    })
+  })
 })
