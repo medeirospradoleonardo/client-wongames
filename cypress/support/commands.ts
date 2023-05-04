@@ -107,3 +107,15 @@ Cypress.Commands.add('shouldBeGreaterThen', (value) => {
     .then(parseFloat)
     .should('be.gt', value)
 })
+
+Cypress.Commands.add('addToCartByIndex', (index) => {
+  cy.getByDataCy('game-card').eq(index).within(() => {
+    cy.findByRole('button', { name: /^add to cart/i }).click()
+  })
+})
+
+Cypress.Commands.add('removeFromCartByIndex', (index) => {
+  cy.getByDataCy('game-card').eq(index).within(() => {
+    cy.findByRole('button', { name: /^remove from cart/i }).click()
+  })
+})
