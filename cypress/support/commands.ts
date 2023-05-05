@@ -25,6 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 // Add Testing Library Commands
+import 'cypress-plugin-stripe-elements'
 import '@testing-library/cypress/add-commands'
 import { User } from './generate'
 
