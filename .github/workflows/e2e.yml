@@ -2,7 +2,7 @@ name: End to End
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
 
 jobs:
   end-to-end:
