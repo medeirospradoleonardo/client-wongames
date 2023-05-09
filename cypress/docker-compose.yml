@@ -11,7 +11,7 @@ services:
       DATABASE_PASSWORD: wongames123
       DATABASE_NAME: wongames
       STRIPE_KEY: 'pk_test_51L514jKp4ziTnOn0bGaES0qYi95Iyv31Df753FWPcM28GduZevVTTb6SEUq9B90s3FpvbE68klLRxea8pjl5R4Zi00v4uuPsxM'
-      NEXT_PUBLIC_API_URL: 'http://localhost:1337'
+      NEXT_PUBLIC_IMAGE_HOST: 'http://localhost:1337'
     ports:
       - '1337:1337'
     depends_on:
