@@ -29,11 +29,11 @@ jest.mock('templates/Base', () => ({
   }
 }))
 
-jest.mock('components/ShowCase', () => {
+jest.mock('components/Showcase', () => {
   return {
     __esModule: true,
     default: function Mock() {
-      return <div data-testid="Mock ShowCase"></div>
+      return <div data-testid="Mock Showcase"></div>
     }
   }
 })
@@ -52,6 +52,6 @@ describe('<Home />', () => {
     render(<Home {...props} />)
 
     expect(screen.getByTestId('Mock BannerSlider')).toBeInTheDocument()
-    expect(screen.getAllByTestId('Mock ShowCase')).toHaveLength(4)
+    expect(screen.getAllByTestId('Mock Showcase')).toHaveLength(4)
   })
 })
