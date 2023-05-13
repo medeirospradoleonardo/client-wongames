@@ -5,7 +5,7 @@ services:
     container_name: wongames_api
     image: medeirospradoleonardo/wongames-api:latest
     environment:
-     - DATABASE_HOST=d
+     - DATABASE_HOST=db
      - DATABASE_PORT=5432
      - DATABASE_USERNAME=wongames
      - DATABASE_PASSWORD=wongames123
