@@ -16,7 +16,7 @@ jobs:
         run: docker-compose -f ./cypress/docker-compose.yml up -d
 
       - name: Testing server
-        run: docker run --network container:wongames_api
+        run: docker ps
 
       - name: Waiting strapi server
         run: docker run --network container:wongames_api jwilder/dockerize -wait http://localhost:1337/admin -timeout 240s -wait-retry-interval 5s
