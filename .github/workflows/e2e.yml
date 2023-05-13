@@ -4,22 +4,23 @@ on:
     branches:
       - 'main'
 
+env:
+  NEXT_PUBLIC_IMAGE_HOST: http://localhost:1337
+  NEXT_PUBLIC_API_URL: http://localhost:1337
+  NEXTAUTH_URL: http://localhost:3000
+  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: pk_test_51L514jKp4ziTnOn0bGaES0qYi95Iyv31Df753FWPcM28GduZevVTTb6SEUq9B90s3FpvbE68klLRxea8pjl5R4Zi00v4uuPsxM
+
 jobs:
   end-to-end:
     runs-on: ubuntu-latest
-    env:
-      NODE_ENV: test
     steps:
       - uses: actions/checkout@v2
 
       - name: Build the stack
         run: docker-compose -f ./cypress/docker-compose.yml up -d
 
-      - name: Testing server
-        run: docker ps
-
       - name: Waiting strapi server
-        run: docker run --network container:wongames_api jwilder/dockerize -wait http://localhost:1337/admin -timeout 240s -wait-retry-interval 5s
+        run: docker run --network container:wongames_api jwilder/dockerize -wait http://localhost:1337/admin -timeout 120s -wait-retry-interval 5s
 
       - name: Setup Node
         uses: actions/setup-node@v1
